@@ -1,0 +1,234 @@
+body {
+margin: 0;
+font-family: 'Press Start 2P', cursive;
+background: linear-gradient(to bottom, #04042b, #310433);
+color: white;
+overflow-x: hidden;
+}
+
+/* Contenedor principal de los meteoros */
+.meteors-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+pointer-events: none;
+}
+
+/* Estilo para cada meteoro */
+.meteor {
+position: absolute;
+background-color: rgba(255, 255, 255, 0.61);
+width: 5px;
+height: 5px;
+border-radius: 2px;
+opacity: 0;
+animation: fall linear infinite;
+}
+
+/* Animaciones para los meteoros y el rastro de caída vertical */
+@keyframes fall {
+0% {
+ transform: translateY(-10vh) scale(1);
+ opacity: 0;
+ box-shadow: none;
+}
+10% {
+ opacity: 1;
+ box-shadow:
+   0px 1px 2px rgb(184, 23, 23),
+   0px 2px 3px rgb(133, 9, 9);
+}
+90% {
+ opacity: 1;
+ box-shadow:
+    0px 10px 10px rgba(255, 255, 255, 0.4),
+    0px 20px 15px rgba(255, 255, 255, 0.2),
+    0px 30px 20px rgba(255, 255, 255, 0.1);
+}
+100% {
+ transform: translateY(110vh) scale(0.8);
+ opacity: 0;
+ box-shadow:
+   0px 15px 10px rgba(255, 255, 255, 0.2),
+   0px 30px 15px rgba(255, 255, 255, 0.1),
+   0px 45px 20px rgba(255, 255, 255, 0);
+}
+}
+
+/* Modificadores para diferentes tamaños, colores y velocidades de los meteoros */
+.meteor:nth-child(1) { left: 10%; width: 4px; height: 4px; animation-duration: 10s; animation-delay: 0s; background-color: rgb(255, 255, 255); }
+.meteor:nth-child(2) { left: 20%; width: 5px; height: 5px; animation-duration: 8s; animation-delay: 2s; background-color: rgba(216, 183, 133, 0.719); }
+.meteor:nth-child(3) { left: 30%; width: 2px; height: 2px; animation-duration: 12s; animation-delay: 4s; background-color: rgb(255, 255, 255); }
+.meteor:nth-child(4) { left: 40%; width: 4px; height: 4px; animation-duration: 9s; animation-delay: 6s; background-color: rgba(255, 228, 76, 0.829); }
+.meteor:nth-child(5) { left: 50%; width: 6px; height: 6px; animation-duration: 7s; animation-delay: 8s; background-color: rgba(255, 228, 76, 0.829); }
+.meteor:nth-child(6) { left: 60%; width: 3px; height: 3px; animation-duration: 11s; animation-delay: 10s; background-color: rgb(255, 255, 255); }
+.meteor:nth-child(7) { left: 70%; width: 5px; height: 5px; animation-duration: 9.5s; animation-delay: 1s; background-color: rgba(255, 255, 255, 0.8); }
+.meteor:nth-child(8) { left: 80%; width: 2px; height: 2px; animation-duration: 13s; animation-delay: 3s; background-color: rgba(255, 228, 76, 0.829); }
+.meteor:nth-child(9) { left: 90%; width: 4px; height: 4px; animation-duration: 8.5s; animation-delay: 5s; background-color: rgba(255, 255, 255, 0.7); }
+.meteor:nth-child(10) { left: 5%; width: 6px; height: 6px; animation-duration: 7s; animation-delay: 7s; background-color: rgba(255, 228, 76, 0.829); }
+.meteor:nth-child(11) { left: 15%; width: 3px; height: 3px; animation-duration: 10s; animation-delay: 9s; background-color: rgba(255, 255, 255, 0.6); }
+.meteor:nth-child(12) { left: 25%; width: 5px; height: 5px; animation-duration: 8s; animation-delay: 11s; background-color: rgba(216, 183, 133, 0.719); }
+.meteor:nth-child(13) { left: 35%; width: 2px; height: 2px; animation-duration: 12s; animation-delay: 13s; background-color: rgb(255, 255, 255); }
+.meteor:nth-child(14) { left: 45%; width: 4px; height: 4px; animation-duration: 9s; animation-delay: 15s; background-color: rgba(255, 228, 76, 0.829); }
+.meteor:nth-child(15) { left: 55%; width: 6px; height: 6px; animation-duration: 7s; animation-delay: 17s; background-color: rgba(216, 183, 133, 0.719); }
+
+nav {
+background: transparent;
+padding: 20px;
+text-align: center;
+}
+
+nav ul li img {
+width: 80px;
+height: 70px;
+vertical-align: middle;
+transition: transform 0.3s ease;
+}
+
+.neon-nav {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 50px;
+}
+
+.neon-nav li {
+color: rgb(253, 255, 231);
+font-size: 16px;
+cursor: pointer;
+text-shadow: 0 0 5px rgb(252, 233, 148), 0 0 10px rgb(252, 233, 148);
+transition: transform 0.2s;
+}
+
+.neon-nav li:hover {
+transform: scale(1.2);
+text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.floating-img-container {
+height: 150px;
+position: relative;
+}
+
+#floating-img {
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+max-height: 100px;
+transition: left 0.3s ease;
+}
+
+.intro {
+padding: 30px;
+text-align: center;
+max-width: 800px;
+margin: auto;
+}
+
+.proyectos {
+padding: 30px;
+text-align: center;
+}
+
+.botones {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+}
+
+/* Estilo para el contenedor de los botones */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo para los enlaces con apariencia de botón */
+.boton-enlace {
+margin: 10px;
+padding: 15px 25px;
+font-size: 12px;
+color: white;
+background-color: #1c1231;
+border: 2px solid rgb(120, 93, 150);
+border-radius: 10px;
+cursor: pointer;
+text-shadow: 0 0 5px rgb(214, 227, 255);
+transition: transform 0.3s;
+}
+
+.boton-enlace:hover {
+transform: scale(1.1);
+background: rgb(201, 40, 152);
+border-color: rgb(252, 114, 155);
+box-shadow: 0 0 20px rgb(230, 51, 75);
+}
+
+.botones button {
+margin: 10px;
+padding: 15px 25px;
+font-size: 12px;
+color: white;
+background-color: #1c1231;
+border: 2px solid rgb(120, 93, 150);
+border-radius: 10px;
+cursor: pointer;
+text-shadow: 0 0 5px rgb(214, 227, 255);
+transition: transform 0.3s;
+}
+
+.botones button:hover {
+transform: scale(1.1);
+background: rgb(201, 40, 152);
+border-color: rgb(252, 114, 155);
+box-shadow: 0 0 20px rgb(230, 51, 75);
+}
+
+@keyframes explosion {
+0% { transform: scale(1); opacity: 1; }
+50% { transform: scale(2); opacity: 0.5; }
+100% { transform: scale(0); opacity: 0; }
+}
+
+.explode {
+animation: explosion 0.5s forwards;
+}
+
+/* Nuevos estilos para imágenes que caen */
+.falling-image {
+  position: absolute;
+  top: -10vh;
+  opacity: 0;
+  animation: imageFall linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes imageFall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: rotate(360deg) scale(0.8);
+  }
+  100% {
+    transform: translateY(120vh) rotate(720deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+/* Modificadores para las imágenes que caen */
+.falling-image:nth-of-type(1) { left: 25%; width: 30px; animation-duration: 18s; animation-delay: 1s; }
+.falling-image:nth-of-type(2) { left: 70%; width: 50px; animation-duration: 18s; animation-delay: 1s; }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo Web - Space Invaders</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="meteors-container">
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+  </div>
+  <div class="meteors-container">
+    <div class="meteor"></div>
+    <div class="meteor"></div>
+    <img src="IMG/alien 1.png"  class="falling-image" style="left: 25%; width: 30px;">
+    <img src="IMG/alien 2.png"  class="falling-image" style="left: 70%; width: 50px;">
+    
+  </div>
+  <nav>
+    <ul class="neon-nav">
+      <li onmouseover="moveImage('inicio')">Inicio</li>
+      <li onmouseover="moveImage('especialidad')">Especialidad</li>
+      <li onmouseover="moveImage('juego')">
+      <img src="IMG/ESCUDO.png" alt="Icono de juego">
+      </li>
+      <li onmouseover="moveImage('proyectos')">Proyectos</li>
+      <li onmouseover="moveImage('contacto')">Contacto</li>
+    </ul>
+  </nav>
+
+  <div class="floating-img-container">
+    <img id="floating-img" src="IMG/nave espacial gif.gif" alt="space" />
+  </div>
+
+  <section class="intro">
+    <h1>Especialidad de Desarrollo Web</h1>
+    <p>Aprende a crear sitios web interactivos, responsivos y funcionales utilizando tecnologías como HTML, CSS, JavaScript, bases de datos, frameworks como Flask y herramientas modernas de desarrollo.</p>
+  </section>
+  <section class="proyectos">
+  <h2>Proyectos Destacados</h2>
+  <div class="botones">
+    <a href="javascript.html" class="boton-enlace">JavaScript</a>
+    <a href="HTML/juego.html" class="boton-enlace">HTML</a>
+    <a href="python.html" class="boton-enlace">Python</a>
+  </div>
+</section>
+
+  <section class="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <div class="botones">
+      <button onclick="explode(this)">Soporte</button>
+      <button onclick="explode(this)">Tecnología de Información</button>
+      <button onclick="explode(this)">Programación</button>
+      <button onclick="explode(this)">Diseño de Software</button>
+    </div>
+  </section>
+
+  <script src="Scripts/script.js"></script>
+</body>
+</html>
